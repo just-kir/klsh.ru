@@ -1,18 +1,15 @@
-<h1>Listing docs</h1>
+<div class="container-fluid">
+<h1>Внешние ресурсы</h1>
+<p>
+  На этой страничке мы собираем ссылки на все сторонние рабочие ресурсы 
+  сотрудников КЛШ. Google-доки, закрытые группы в социальных сетях &mdash; все они 
+  идеально подходят для того, чтобы быть вы рассказали о них здесь.
+</p>
+<%= link_to 'Добавить', new_doc_path, class: "btn btn-success btn-green", id: "new_doc", remote: true %> 
 <div class="docs" id="docs">
-<%= link_to 'New Doc', new_doc_path, id: "new_doc", remote: true %> 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>link</th>
-    <th>Title</th>
-    <th>description</th>
-
-    <th colspan="2"></th>
-  </tr>
   <div id = "docs"> 
     <%= render @docs %>
   </div>
-</table>
 
+</div>
 </div>

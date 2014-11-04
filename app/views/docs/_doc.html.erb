@@ -1,12 +1,23 @@
 <%= form_for :doc, remote: true, url: docs_path do |f| %>
-  <tr>
-    <td><%= doc.name %></td>
-    <td><%= doc.link %></td>
-    <td><%= doc.title %></td>
-    <td><%= doc.description %></td>
-    <td><%= link_to 'Show', doc_path(doc) %></td>
-    <td><%= link_to 'Edit', edit_doc_path(doc) %></td>
-    <td><%= link_to 'Destroy', doc_path(doc),
-      method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    
+  <br>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><a href= "http:\\<%= doc.link %>" style="color: #428bca">
+      <u><%= doc.title %></u></a></h3>
+    </div>
+    <div class="panel-body">
+      <p><%= markdown(doc.description) %></p>
+      <hr>
+      <p align="right">
+        <b><%= doc.name %></b>
+        <%= link_to 'Show', doc_path(doc) %>
+        <%= link_to 'Edit', edit_doc_path(doc) %>
+        <%= link_to 'Destroy', doc_path(doc),
+        method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+    </div>
+  </div>
+  
+  <hr>    
 <% end %>
