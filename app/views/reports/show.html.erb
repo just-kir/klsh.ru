@@ -1,0 +1,7 @@
+
+<div class = "bs-callout bs-callout-warning">
+    <h4><%= @report.name %> </h4>
+    <p> <%= markdown(@report.text) %></p>
+</div>
+
+<%= link_to 'Back', reports_path %>

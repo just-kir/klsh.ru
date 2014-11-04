@@ -1,0 +1,45 @@
+<h1>Editing</h1>
+
+<%= form_for :elephant, url: elephant_path(@elephant), method: :patch do |f| %>
+  <% if @elephant.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@elephant.errors.count, "error") %> prohibited
+      this record from being saved:</h2>
+    <ul>
+    <% @elephant.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :link %><br>
+    <%= f.text_field :link %>
+  </p>
+ 
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :department %><br>
+    <%= f.text_field :department %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

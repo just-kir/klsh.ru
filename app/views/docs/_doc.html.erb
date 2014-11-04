@@ -1,0 +1,12 @@
+<%= form_for :doc, remote: true, url: docs_path do |f| %>
+  <tr>
+    <td><%= doc.name %></td>
+    <td><%= doc.link %></td>
+    <td><%= doc.title %></td>
+    <td><%= doc.description %></td>
+    <td><%= link_to 'Show', doc_path(doc) %></td>
+    <td><%= link_to 'Edit', edit_doc_path(doc) %></td>
+    <td><%= link_to 'Destroy', doc_path(doc),
+      method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>

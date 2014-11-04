@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag "base", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
+    <%= render 'layouts/shim' %>
+
+        <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+  </head>
+  <body data-spy="scroll" data-target="#affix-nav">
+    <div id="wrapper">
+    <%= render 'layouts/baseheader' %>
+      <div id="page-wrapper">
+        
+          
+
+      <%= yield %>
+        
+      </div>
+    </div>
+  </body>
+  
+</html>

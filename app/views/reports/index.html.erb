@@ -1,0 +1,20 @@
+
+<div class="container-fluid">
+<h1>Обратная связь</h1> 
+<p>
+Это раздел предназначен для связи с технической поддержкой сайта.
+Если вы заметили какую-то ошибку на сайте, у вас возникла какая-то
+проблема, или вы хотите внести предложение по улучшению, то этот
+раздел для вас. 
+</p>
+<%= link_to 'New Report', new_report_path, class: "btn btn-success btn-green", id: "new_report", remote: true %> 
+<div class="reports" id="reports">
+
+
+  <div id = "reports"> 
+    <%= render @reports %>
+  </div>
+
+
+</div>
+</div>

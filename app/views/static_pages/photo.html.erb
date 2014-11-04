@@ -1,0 +1,24 @@
+
+<% provide(:title, 'Фотогалерея') %>
+
+ 
+<div class="photo-gal">
+	<div class="fotorama" 
+		data-width="80%"
+  	data-fit="contain"
+  	data-hash="true"
+  	data-loop="true"
+  	data-keyboard="true"
+  	data-transition="crossfade"
+  	data-allowfullscreen="true"
+		data-nav="thumbs" data-thumbwidth = "85" 
+		data-thumbheight = "64">
+  	<img src="<%= asset_path("1.jpg")%>">
+  	<img src="<%= asset_path("2.jpg")%>">
+  	<img src="<%= asset_path("3.jpg")%>">
+  	<img src="<%= asset_path("4.jpg")%>">
+  	<img src="<%= asset_path("5.jpg")%>">
+  	<img src="<%= asset_path("6.jpg")%>">
+  	<img src="<%= asset_path("7.jpg")%>">
+	</div>
+</div>

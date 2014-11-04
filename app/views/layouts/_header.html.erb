@@ -1,0 +1,65 @@
+<div class="row">
+  <div class="col-md-9">
+    <div class="page-header">
+      <h1>Красноярская летняя школа 
+        <small><%= days_left_to_klsh%> <%= get_numending(days_left_to_klsh)%> до начала</small>
+      </h1>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <p class="notice"><%= notice %></p> 
+    <p class="alert"><%= alert %></p>
+    <div id="user_nav">
+      <% if user_signed_in? %>
+      Вошли как <%= current_user.email %>. Не вы?
+      <%= link_to "Выйти", destroy_user_session_path, :method => :delete %>
+      <% else %>
+      <%= link_to "Зарегистрироваться", new_user_registration_path %> или
+      <%= link_to "войти", new_user_session_path %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+ <ul class="nav nav-pills ">
+  <li class=<%=buthead ("") %>> <%= link_to "Главная", 
+   root_path%> </li>
+
+  <li class=<%=buthead ("posts") %>> <%= link_to "Новости", 
+  posts_path%> </li>
+
+  <li class=<%=buthead ("photo") %>> <%=link_to "Фотогалерея",
+  photo_path %> </li>
+    
+  <li class=<%=buthead ("about") %>> <%= link_to "О школе", 
+  about_path, method: :get %> </li>
+  
+  <li class=<%=buthead ("faq") %>> <%= link_to "FAQ", 
+  faq_path%> </li>
+  
+  <li class=<%=buthead ("toklsh") %>> <%= link_to "КЛШ-2015", 
+  toklsh_path, method: :get %> </li>
+  
+  <li class=  "<%= "dropdown " + buthead("everything")%>" >
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Материалы <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+      <li> <a href = "#">Учебные</a> </li>
+      <li> <%= link_to "Фольклор", 
+        everything_folklore_path %> </li>
+      <li class="divider"></li>
+      <li> <a href ="#">История КЛШ </a></li>
+      <li class="divider"></li>
+      <li> <a href ="#">Выпускники КЛШ </a></li>
+    </ul>
+  </li>
+  
+  <li class=<%=buthead ("they_talk_about_us") %>> <%= link_to "О нас говорят", 
+  they_talk_about_us_path%> </li>
+
+  <li class=<%=buthead ("contacts") %>> <%= link_to "Контакты", 
+  contacts_path%> </li>
+  
+</ul>
+<hr>

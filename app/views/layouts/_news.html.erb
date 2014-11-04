@@ -1,0 +1,16 @@
+<div class="col-md-3"></div>
+<div class="col-md-9">
+
+  <h2>Последние <%= link_to "новости", {controller: "posts"}, :class => "rred" %></h2>
+    <ul>
+       
+      <% @posts.each do |post| %>   
+          <li><%= post.tweet %></li>
+      <% end %>
+
+      <br>  
+
+      <a class = "red-dashed" href='#' >Еще новости</a>
+    </ul>
+
+</div>

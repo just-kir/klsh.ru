@@ -1,0 +1,15 @@
+<h1>Listing quotes</h1>
+<div class="quotes" id="quotes">
+<%= link_to 'New Quote', new_quote_path, id: "new_link", remote: true %> 
+<table>
+  <tr>
+    <th>Author</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+  <div id = "quotes"> 
+    <%= render @quotes %>
+  </div>
+</table>
+
+</div>

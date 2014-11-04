@@ -1,0 +1,18 @@
+<h1>Listing docs</h1>
+<div class="docs" id="docs">
+<%= link_to 'New Doc', new_doc_path, id: "new_doc", remote: true %> 
+<table>
+  <tr>
+    <th>Name</th>
+    <th>link</th>
+    <th>Title</th>
+    <th>description</th>
+
+    <th colspan="2"></th>
+  </tr>
+  <div id = "docs"> 
+    <%= render @docs %>
+  </div>
+</table>
+
+</div>

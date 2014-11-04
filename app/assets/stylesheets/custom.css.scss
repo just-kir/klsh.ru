@@ -1,0 +1,245 @@
+@import 'fotorama';
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+$grayMediumLight: #eaeaea;
+$klshbrown: #C20B06;
+$klshgreen: 04B404;
+
+$klshbrown2: #980905;
+$klshbrown1: #940805;
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 0px;
+  margin-left: 1em
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+  /*text-align: center;*/
+}
+
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+hr {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+}
+
+/*true links*/
+a:link {
+    text-decoration: none;
+    color: $klshbrown;
+}
+
+a:visited {
+    text-decoration: none;
+    color: $klshbrown;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: $klshbrown;
+}
+
+a:active {
+    text-decoration: underline;
+    color: $klshbrown;
+}
+
+a.red-dashed {color: $klshbrown; border-bottom:$klshbrown 1px dashed;}
+    
+
+
+
+/* footer */
+.footer {margin: 5px 0 50px; text-align: left; color:#666; font-size: 13px;}
+    .footer a {color:#666; text-decoration: underline;}
+
+.photo-gal{
+  .fotorama__wrap { margin: auto;} 
+}
+
+
+/*Fotorama*/
+
+.fotorama__caption {
+    /* 1. Always visible. */
+    opacity: 1 !important;
+    text-align: center;
+    /* 2. Semi-transparent black. */
+    color: #fff;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.fotorama__caption__wrap {
+    background: none;
+}
+
+.fotorama__caption__wrap h2 {
+    font-weight: bold;
+    font-size: 110%;
+}
+
+.fotorama__caption__wrap p {
+    margin: 0 0 .25em;
+}
+
+
+
+
+/*Navigation*/
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #ffffff;
+  background-color: #04B404;
+  font-weight: bold;
+}
+
+.nav-pills > .active > a > .badge {
+  color: #04B404;
+  background-color: #ffffff;
+
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+
+}
+
+
+
+
+/*Social buttons 
+.social-vk{
+  background: url(image-path('social/vk.jpg')) no-repeat;
+  cursor:pointer;
+  border:none;
+  width:32px;
+  height:32px;
+}
+*/
+.social-vk{
+  opacity: 0.5;  
+}
+.social-vk:hover 
+{   
+  opacity: 1; 
+}
+
+
+
+/* for articles and affix-elements*/
+
+
+ul.affix {
+  position: fixed; 
+  top: 60px;
+  
+  width: 263px;
+}
+ul.affix-top {
+  position: static;
+}
+ul.affix-bottom {
+  position: absolute;
+}
+
+/* First level of nav */
+.sidenav {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  background-color: $grayMediumLight;
+  border-radius: 5px;
+}
+
+/* All levels of nav */
+.sidebar .nav > li > a {
+  display: block;
+  color: $klshbrown;
+  padding: 5px 20px;
+}
+.sidebar .nav > li > a:hover,
+.sidebar .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #e5e3e9;
+}
+.sidebar .nav > .active > a,
+.sidebar .nav > .active:hover > a,
+.sidebar .nav > .active:focus > a {
+  font-weight: bold;
+  color: #660A00 ;
+  background-color: transparent;
+}
+
+/* Nav: second level */
+.sidebar .nav .nav {
+  display: none;
+}
+.sidebar .nav > li.active .nav {
+  display:block;
+}
+.sidebar .nav .nav {
+  margin-bottom: 8px;
+}
+.sidebar .nav .nav > li > a {
+  padding-top:    3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  font-size: 90%;
+}
+#content {
+  margin-top:20px;
+  position: relative;
+  z-index: -10px;
+}
+
+
+
+
+
+
+
