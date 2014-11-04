@@ -62,4 +62,14 @@ module ApplicationHelper
       markdown.render(text).html_safe
     end
   end
+
+  def url(link)
+    if link[0, 4] == "http"
+      return link
+    else
+      link = "http://" + link
+      return link
+    end  
+  end      
+
 end
