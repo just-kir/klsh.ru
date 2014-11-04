@@ -2,27 +2,27 @@
 <%= form_for :doc, url: docs_path, remote: true do |f| %>
    
   <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :name, "Представьтесь" %><br>
+    <%= f.text_field :name, :class => "form-control" %>
   </p>
  
   <p>
-    <%= f.label :link %><br>
-    <%= f.text_field :link %>
+    <%= f.label :link, "Дайте ссылку" %><br>
+    <%= f.text_field :link, :class => "form-control" %>
   </p>
   
   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :title, "Укажите заголовок" %><br>
+    <%= f.text_field :title, :class => "form-control" %>
   </p>
  
   <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.label :description, "Дайте описание" %><br>
+    <%= f.text_area :description, :class => "form-control" %>
   </p>
  
   <p>
-    <%= f.submit %>
+    <%= f.submit 'Сохранить', :class => 'btn btn-success btn-green' %>
   </p>
 <% end %>
 </div>

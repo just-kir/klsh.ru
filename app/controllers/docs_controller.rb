@@ -1,7 +1,7 @@
 class DocsController < ApplicationController
   layout 'base'
 def index
-  @docs = Doc.all
+  @docs = Doc.order("created_at desc")
 end
 
 def new
