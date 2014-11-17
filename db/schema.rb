@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140906053129) do
+ActiveRecord::Schema.define(version: 20141106205525) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -46,6 +46,10 @@ ActiveRecord::Schema.define(version: 20140906053129) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "ntn"
+    t.boolean  "non"
+    t.boolean  "nen"
+    t.boolean  "nfn"
   end
 
   create_table "posts", force: true do |t|

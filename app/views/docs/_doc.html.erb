@@ -1,5 +1,4 @@
 <%= form_for :doc, remote: true, url: docs_path do |f| %>
-    
   <br>
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -14,7 +13,7 @@
         <%= link_to 'Show', doc_path(doc) %>
         <%= link_to 'Edit', edit_doc_path(doc) %>
         <%= link_to 'Destroy', doc_path(doc),
-        method: :delete, data: { confirm: 'Are you sure?' } %>
+        method: :delete, data: { confirm: 'Уверены?' } %>
       </p>
     </div>
   </div>

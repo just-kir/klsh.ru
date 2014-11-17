@@ -4,7 +4,6 @@ class CreateElephants < ActiveRecord::Migration
       t.string :name
       t.string :link
       t.string :title
-      t.string :department
       t.text :description
 
       t.timestamps

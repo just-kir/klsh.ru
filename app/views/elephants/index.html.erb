@@ -1,19 +1,14 @@
-<h1>Listing elephants</h1>
-<div class="elephants" id="elephants">
-<%= link_to 'New elephant', new_elephant_path, id: "new_elephant", remote: true %> 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>link</th>
-    <th>Title</th>
-    <th>Department</th>
-    <th>Description</th>
+<div class="container-fluid">
+<h1>Слоны</h1>
+<p>
+Здесь мы пополяем списки потенциальных слонов для следующих сезонов.
+</p>
 
-    <th colspan="2"></th>
-  </tr>
-  <div id = "elephants"> 
+<%= link_to 'Добавить', new_elephant_path, class: "btn btn-success btn-green", id: "new_elephant", remote: true %> 
+
+<div class="elephants" id="elephants">
     <%= render @elephants %>
-  </div>
-</table>
+</div>
+
 
 </div>

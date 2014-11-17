@@ -1,13 +1,35 @@
 <%= form_for :elephant, remote: true, url: elephants_path do |f| %>
-  <tr>
-    <td><%= elephant.name %></td>
-    <td><%= elephant.link %></td>
-    <td><%= elephant.title %></td>
-    <td><%= elephant.department %></td>
-    <td><%= elephant.description %></td>
-    <td><%= link_to 'Show', elephant_path(elephant) %></td>
-    <td><%= link_to 'Edit', edit_elephant_path(elephant) %></td>
-    <td><%= link_to 'Destroy', elephant_path(elephant),
-      method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <br>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+    <h3 class="panel-title"><a href= <%= url(elephant.link) %> style="color: #428bca">
+      <u><%= elephant.title %></u> </a>
+      <%if elephant.ntn == true%> 
+      <u style ="text-decoration: none"><span class="label label-primary">НТН</span></u>
+      <%end%>
+      <%if elephant.nen == true%> 
+      <u style ="text-decoration: none"><span class="label label-success">НЕН</span></u>
+      <%end%>
+      <%if elephant.non == true%> 
+      <u style ="text-decoration: none"><span class="label label-warning">НОН</span></u>
+      <%end%>
+      <%if elephant.nfn == true%> 
+      <u style ="text-decoration: none"><span class="label label-info">НФН</span></u>
+      <%end%>
+      </h3>
+
+    </div>
+    <div class="panel-body">
+      <p><%= markdown(elephant.description) %></p>
+      <hr>
+      <p align="right">
+        <b><%= elephant.name %></b>
+        <%= link_to 'Show', elephant_path(elephant) %>
+        <%= link_to 'Edit', edit_elephant_path(elephant) %>
+        <%= link_to 'Destroy', elephant_path(elephant),
+        method: :delete, data: { confirm: 'Уверены?' } %>
+      </p>
+    </div>
+  </div>
+  <hr>  
 <% end %>

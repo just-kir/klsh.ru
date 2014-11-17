@@ -1,7 +1,7 @@
 class ElephantsController < ApplicationController
   layout 'base'
 def index
-  @elephants = Elephant.all
+  @elephants = Elephant.order("created_at desc")
 end
 
 def new
@@ -49,7 +49,7 @@ end
 
 private
   def elephant_params
-    params.require(:elephant).permit(:name, :link, :title, :department, :description)
+    params.require(:elephant).permit(:name, :link, :title, :ntn, :nen, :non, :nfn, :description)
   end
 
 
