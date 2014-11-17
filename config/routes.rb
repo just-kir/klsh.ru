@@ -31,6 +31,7 @@ KlshRu::Application.routes.draw do
   match '/base', to: 'base#index', via: 'get'
   match '/base/rules', to: 'base#rules', via: 'get'
   
+  match 'design_candidates/home1', to: 'design_candidates#home1', via: 'get'
   
 
   # The priority is based upon order of creation: first created -> highest priority.
