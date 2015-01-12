@@ -29,7 +29,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top " >
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -39,11 +39,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Красноярская летняя школа</a>
+                <a class="navbar-brand" href="index.html">КЛШ</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="index.html">Новости</a>
@@ -52,11 +53,31 @@
                         <a href="about.html">Фотогалерея</a>
                     </li>
                     <li>
+                        <a href="about.html">О школе</a>
+                    </li>
+                    
+                    <li>
                         <a href="post.html">КЛШ-2015</a>
                     </li>
-                    <li>
-                        <a href="contact.html">Материалы</a>
+                    
+
+                    <li class=  "<%= "dropdown " + buthead("everything")%>" >
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Материалы <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li> <a href = "#">Учебные</a> </li>
+                        <li> <%= link_to "Фольклор", 
+                                everything_folklore_path %> </li>
+                        <li class="divider"></li>
+                        <li> <a href ="#">История КЛШ </a></li>
+                        <li class="divider"></li>
+                        <li> <a href ="#">КЛШ в лицах </a></li>
+                      </ul>
                     </li>
+                    
+
+
                     <li>
                         <a href="contact.html">О нас говорят</a>
                     </li>
@@ -78,9 +99,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Clean Blog</h1>
+                        <h1><%= days_left_to_klsh%> <%= get_numending(days_left_to_klsh)%></h1>
                         <hr class="small">
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                        <span class="subheading">осталось до начала нового сезона</span>
                     </div>
                 </div>
             </div>
@@ -90,7 +111,25 @@
     <!-- Main Content -->
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class = "col-lg-3 col-lg-offset-1 col-md-4">
+              <br>
+              <h3>Наши мероприятия</h3>
+              <ul class="nav nav-pills nav-stacked">    
+      
+                <li><%= link_to "Физмат биатлон, 12 сентября",
+                  toklsh_path(anchor:"биатлон"), :class => "rred"  %> </li>
+    
+                <li><%= link_to "Олимпиада КЛШ, 20 декабря",
+                  toklsh_path(anchor:"олимпиада"), :class => "rred"  %> </li>
+
+                <li><%= link_to "Вступительное задание, до 5 февраля",
+                  toklsh_path(anchor:"вступзад"), :class => "rred"  %> </li>
+    
+                <li><%= link_to "Собеседование в КЛШ, 20 мая",
+                  toklsh_path(anchor:"собеседование"), :class => "rred"  %> </li> 
+              </ul>
+            </div>
+            <div class="col-lg-7 col-lg-offset-1 col-md-8">
                 <div class="post-preview">
                     <a href="post.html">
                         <h2 class="post-title">
@@ -139,7 +178,7 @@
                 <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
+                        <a href="#">Все новости &rarr;</a>
                     </li>
                 </ul>
             </div>
@@ -147,6 +186,8 @@
     </div>
 
     <hr>
+
+
 
     <!-- Footer -->
     <footer>
@@ -179,7 +220,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+                    <p class="copyright text-muted"> Красноярская летняя школа, 2015</p>
                 </div>
             </div>
         </div>
@@ -187,8 +228,8 @@
 
     <!-- jQuery -->
     <%= javascript_include_tag 'jquery.js' %>
-    <%= javascript_include_tag 'bootstrap.min.js' %>
-    <%= javascript_include_tag 'clean-blog.min.js' %>
+    <%= javascript_include_tag 'bootstrap.js' %>
+    <%= javascript_include_tag 'clean-blog.js' %>
     
 </body>
 
