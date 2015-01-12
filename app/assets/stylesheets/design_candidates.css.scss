@@ -4,7 +4,7 @@
 /*
 *= require_self
 */
-
+$grid-float-breakpoint: 1020px;
 @import 'fotorama';
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -70,7 +70,7 @@ hr.small {
   font-weight: 800;
   letter-spacing: 1px;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 968px) {
   .navbar-custom {
     background-color: rgba(255, 255, 255, 0.9);;
     border-bottom: 1px solid transparent;
@@ -92,7 +92,7 @@ hr.small {
     color: #0085a1;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1025px) {
   .navbar-custom {
     -webkit-transition: background-color 0.3s;
     -moz-transition: background-color 0.3s;
