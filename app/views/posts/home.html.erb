@@ -1,6 +1,104 @@
-<div class="row">
-  <%= render 'layouts/events'%>
-  <%= render 'layouts/fotorama'%>
-  <%= render 'layouts/news'%>
 
-</div>
+
+    
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('<%= asset_path("home-bg.jpg")%>')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1><%= days_left_to_klsh%> <%= get_numending(days_left_to_klsh)%></h1>
+                        <hr class="small">
+                        <span class="subheading">осталось до начала нового сезона</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class = "col-lg-3 col-lg-offset-1 col-md-4">
+              <br>
+              <h3>Наши мероприятия</h3>
+              <ul class="nav nav-pills nav-stacked">    
+      
+                <li><%= link_to "Физмат биатлон, 12 сентября",
+                  toklsh_path(anchor:"биатлон"), :class => "rred"  %> </li>
+    
+                <li><%= link_to "Олимпиада КЛШ, 20 декабря",
+                  toklsh_path(anchor:"олимпиада"), :class => "rred"  %> </li>
+
+                <li><%= link_to "Вступительное задание, до 5 февраля",
+                  toklsh_path(anchor:"вступзад"), :class => "rred"  %> </li>
+    
+                <li><%= link_to "Собеседование в КЛШ, 20 мая",
+                  toklsh_path(anchor:"собеседование"), :class => "rred"  %> </li> 
+              </ul>
+            </div>
+            <div class="col-lg-7 col-lg-offset-1 col-md-8">
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            Man must explore, and this is exploration at its greatest
+                        </h2>
+                        <h3 class="post-subtitle">
+                            Problems look mighty small from 150 miles up
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 24, 2014</p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
+                        </h2>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on September 18, 2014</p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            Science has not yet mastered prophecy
+                        </h2>
+                        <h3 class="post-subtitle">
+                            We predict too much for the next year and yet far too little for the next ten.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on August 24, 2014</p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            Failure is not an option
+                        </h2>
+                        <h3 class="post-subtitle">
+                            Many say exploration is part of our destiny, but it’s actually our duty to future generations.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="#">Start Bootstrap</a> on July 8, 2014</p>
+                </div>
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Все новости &rarr;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+
+
+
+
+

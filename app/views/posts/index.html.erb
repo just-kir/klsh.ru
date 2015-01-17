@@ -1,8 +1,22 @@
-
+<header class="intro-header" style="background-image: url('<%= asset_path("home-bg.jpg")%>')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1><%= days_left_to_klsh%> <%= get_numending(days_left_to_klsh)%></h1>
+                        <hr class="small">
+                        <span class="subheading">осталось до начала нового сезона</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 <% if user_signed_in? %>
   <%= link_to 'New post', new_post_path %>
 <% end %> 
-
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
 <% @posts.each do |post| %> 
   <% if post.title? %>
@@ -27,6 +41,10 @@
     <br>
 
 <% end %>
+
+</div>
+</div>
+</div>
 
 <%= will_paginate @posts%>
 
