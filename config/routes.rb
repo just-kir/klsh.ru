@@ -22,6 +22,7 @@ KlshRu::Application.routes.draw do
   match '/photo', to: 'static_pages#photo', via: 'get'
   match '/they_talk_about_us', to: 'static_pages#they_talk_about_us', via: 'get'
   match '/toklsh', to: 'static_pages#toklsh', via: 'get'
+  match '/educational', to: 'static_pages#educational', via: 'get'
 
   match 'everything/folklore', to: 'static_pages#folklore', via: 'get'
   match 'everything/studying', to: 'static_pages#studying', via: 'get'

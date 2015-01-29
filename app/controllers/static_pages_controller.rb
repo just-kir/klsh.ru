@@ -23,5 +23,8 @@ class StaticPagesController < ApplicationController
   def they_talk_about_us
   end
 
+  def educational
+  end
+
    	
 end
