@@ -20,6 +20,7 @@
 //= require fotorama
 
 //= require bootstrap-sprockets
+//= require clean-blog
 // require_tree .
 
 
