@@ -29,18 +29,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted"> Красноярская летняя школа, 2015</p>
-                    <p class="notice"><%= notice %></p> 
-                    <p class="alert"><%= alert %></p>
-                    <div id="user_nav">
-                    <% if user_signed_in? %>
-                      Вошли как <%= current_user.email %>. Не вы?
-                      <%= link_to "Выйти", destroy_user_session_path, :method => :delete %>
-                    <% else %>
-                      <%= link_to "Зарегистрироваться", new_user_registration_path %> или
-                      <%= link_to "войти", new_user_session_path %>
-                    <% end %>
-                    </div>
+                    
                 </div>
             </div>
         </div>
