@@ -11,13 +11,13 @@
             </div>
         </div>
     </header>
-<% if user_signed_in? %>
-  <%= link_to 'New post', new_post_path %>
-<% end %> 
+ 
 <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
+<% if user_signed_in? %>
+  <%= link_to 'Добавить новость', new_post_path, :class => 'btn btn-success btn-green' %>
+<% end %>
 <% @posts.each do |post| %> 
   <% if post.title? %>
     <h2><%= link_to post.title, post_path(post) %></h2>
@@ -41,10 +41,10 @@
     <br>
 
 <% end %>
-
-</div>
-</div>
-</div>
-
 <%= will_paginate @posts%>
+</div>
+</div>
+</div>
+
+
 

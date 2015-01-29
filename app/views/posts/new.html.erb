@@ -1,3 +1,11 @@
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+<div class="row">
+<div class="col-lg-10 col-lg-offset-1 col-md-9">
+
 <%= form_for :post, url: posts_path do |f| %>
   <% if @post.errors.any? %>
   <div id="error_explanation">
@@ -11,27 +19,30 @@
   </div>
   <% end %>
   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.label :title, "Заголовок" %><br>
+    <%= f.text_field :title, :class => "form-control" %>
   </p>
  
 	<p>
-    <%= f.label :tweet %><br>
-    <%= f.text_field :tweet %>
+    <%= f.label :tweet, "Твит" %><br>
+    <%= f.text_field :tweet, :class => "form-control" %>
   </p>
  
 
   <p>
-    <%= f.label :text %><br>
+    <%= f.label :text, "Текст" %><br>
     <%= f.cktext_area :text, :ckeditor => 
     { :language => 'ru', :toolbar => 'article'} %>
   </p>
  
   <p>
-    <%= f.submit %>
+    <%= f.submit "Опубликовать", :class => 'btn btn-success btn-green' %>
   </p>
 
 
 <% end %>
  
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Назад', posts_path %>
+</div>
+</div>
+</div>

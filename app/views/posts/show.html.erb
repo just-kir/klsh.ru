@@ -1,9 +1,26 @@
-<% if @post.title? %>
-	<h2><%= @post.title %></h2>
-<% else %>
-	<h2> Без темы </h2>
-<% end %>
-<small><em><%= @post.timestamp %></em></small>
-<p>
-<%= @post.text.html_safe %>
-</p>
+
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-1">
+				<% if @post.title? %>
+				<h2><%= @post.title %></h2>
+				<% else %>
+				<h2> Без темы </h2>
+				<% end %>
+				<small><em><%= @post.timestamp %></em></small>
+				<p>
+				<%= @post.text.html_safe %>
+				</p>
+				
+				<ul class="pager">
+          <li class="next">
+          	<%= link_to 'Все новости &rarr;'.html_safe , posts_path %>
+            
+          </li>
+        </ul>
+		</div>
+	</div>
+</div>
