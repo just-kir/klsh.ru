@@ -51,8 +51,9 @@
                     
 
 
-                    <li>
-                        <a href="contact.html">О нас говорят</a>
+                    <li class=<%=buthead ("they_talk_about_us") %>>
+                        <%=link_to "О нас говорят",
+                      quotes_path %>
                     </li>
                     
                     <li class=<%=buthead ("contacts") %>> <%= link_to "Контакты", 
@@ -124,11 +125,7 @@
     </ul>
   </li>
   
-  <li class=<%=buthead ("they_talk_about_us") %>> <%= link_to "О нас говорят", 
-  they_talk_about_us_path%> </li>
-
-  <li class=<%=buthead ("contacts") %>> <%= link_to "Контакты", 
-  contacts_path%> </li>
+ 
   
 </ul>
 <hr> -->

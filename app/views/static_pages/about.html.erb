@@ -1,10 +1,25 @@
 <!--<body data-spy="scroll" data-target="#affix-nav"> -->
+
+
+<header class="intro-header" style="background-image: url('<%= asset_path("home-bg.jpg")%>')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1 class = "head">Большой <%=link_to "FAQ", faq_path %></a></h1>
+                        <hr class="small">
+                        <span class="subheading">о Красноярской летней школе</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
+
 <div class="container">
 
-
 <div class="row">
-<nav id="affix-nav" class="sidebar col-md-3 col-sm-3 hidden-xs">
-    <ul class="nav sidenav" data-spy="affix" data-offset-top="125" data-offset-bottom="0">
+<nav id="affix-nav" class="sidebar col-md-3 hidden-sm hidden-xs">
+    <ul class="nav sidenav" data-spy="affix" data-offset-top="0" data-offset-bottom="0">
         <li class="active"><a href="#wt_is_klsh">Что такое КЛШ</a>
         <ul class="nav">
         <li><a href="#concept">Концепция</a></li>
@@ -34,7 +49,8 @@
         </li>
     </ul>
 </nav>
-<section id="content" class="col-md-9 col-sm-9 col-xs-12">
+
+<section id="content" class="col-md-offset-3 col-md-9 col-sm-12 col-xs-12">
     <article id="wt_is_klsh">
     <h2>Что такое КЛШ</h2>
     <p>Каждое лето около двухсот школьников из Красноярского края и других частей России собираются

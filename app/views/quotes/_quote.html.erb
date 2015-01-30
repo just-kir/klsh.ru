@@ -1,11 +1,16 @@
 
 <%= form_for :quote, remote: true, url: quotes_path do |f| %>
-  <tr>
-    <td><%= quote.author %></td>
-    <td><%= quote.text %></td>
-    <td><%= link_to 'Show', quote_path(quote) %></td>
-    <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
-    <td><%= link_to 'Destroy', quote_path(quote),
-      method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <blockquote>
+  <p><%= markdown(quote.text) %><p>
+  <div class="subtext">
+  <p> &mdash; <%= quote.author %></p>
+  </div>
+  </blockquote>  
+    
+    <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_quote_path(quote) %>
+    <%= link_to 'Destroy', quote_path(quote),
+      method: :delete, data: { confirm: 'Уверены?' } %>
+    <%end%>
+  <hr>
 <% end %>

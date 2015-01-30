@@ -6,7 +6,8 @@ KlshRu::Application.routes.draw do
   devise_for :users
 
   resources :posts
-  resources :quotes
+  resources :quotes, :path => "they_talk_about_us/quotes"
+  resources :articles, :path => "they_talk_about_us/media"
   resources :elephants, :path => "base/elephants"
   resources :docs, :path => "base/docs"
   resources :reports, :path => "base/reports"
@@ -20,7 +21,7 @@ KlshRu::Application.routes.draw do
   match '/contacts', to: 'static_pages#contacts', via: 'get'
   match '/faq', to: 'static_pages#faq', via: 'get'
   match '/photo', to: 'static_pages#photo', via: 'get'
-  match '/they_talk_about_us', to: 'static_pages#they_talk_about_us', via: 'get'
+  
   match '/toklsh', to: 'static_pages#toklsh', via: 'get'
 
 

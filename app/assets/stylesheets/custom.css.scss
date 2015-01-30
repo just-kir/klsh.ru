@@ -20,6 +20,7 @@ body {
   font-size: 20px;
   color: #404040;
 }
+
 p {
   line-height: 1.5;
   margin: 30px 0;
@@ -27,6 +28,8 @@ p {
 p a {
   text-decoration: underline;
 }
+
+
 h1,
 h2,
 h3,
@@ -36,6 +39,18 @@ h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
+.head a{
+  color: white;
+}
+.head a:link{
+   text-decoration: underline;
+}
+.head a:hover,
+a:focus {
+  color: white;
+  text-decoration: none;}
+
+
 a {
   color: #404040;
 }
@@ -48,7 +63,7 @@ a img:focus {
   cursor: zoom-in;
 }
 blockquote {
-  color: #808080;
+  font-size: 25px;
   font-style: italic;
 }
 hr.small {
@@ -96,6 +111,8 @@ hr.small {
     color: #0085a1;
   }
 }
+
+
 @media only screen and (min-width: 1025px) {
   .navbar-custom {
     -webkit-transition: background-color 0.3s;
@@ -435,3 +452,75 @@ body {
     margin: 0 0 .25em;
 }
 
+l.affix {
+  position: fixed; 
+  top: 60px;
+  
+  width: 263px;
+}
+ul.affix-top {
+  position: static;
+}
+ul.affix-bottom {
+  position: absolute;
+}
+
+/* First level of nav */
+.sidenav {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  background-color: $grayMediumLight;
+  border-radius: 5px;
+}
+
+/* All levels of nav */
+.sidebar .nav > li > a {
+  display: block;
+  color: $klshbrown;
+  padding: 5px 20px;
+}
+.sidebar .nav > li > a:hover,
+.sidebar .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #e5e3e9;
+}
+.sidebar .nav > .active > a,
+.sidebar .nav > .active:hover > a,
+.sidebar .nav > .active:focus > a {
+  font-weight: bold;
+  color: #660A00 ;
+  background-color: transparent;
+}
+
+/* Nav: second level */
+.sidebar .nav .nav {
+  display: none;
+}
+.sidebar .nav > li.active .nav {
+  display:block;
+}
+.sidebar .nav .nav {
+  margin-bottom: 8px;
+}
+.sidebar .nav .nav > li > a {
+  padding-top:    3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  font-size: 90%;
+}
+#content {
+  margin-top:20px;
+  position: relative;
+  z-index: -10px;
+}
+
+.subtext p{
+  font-size: 18px;
+  color: grey;
+}
+
+.form-control {
+    width: 70%;  
+}

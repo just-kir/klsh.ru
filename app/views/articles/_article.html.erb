@@ -1,0 +1,17 @@
+
+<%= form_for :atricle, remote: true, url: articles_path do |f| %>
+  <blockquote>
+  <p><a a href= <%= url(article.link) %>> <%= markdown(article.quote) %> </a><p>
+  <div class="subtext">
+  <p> &mdash; <%= article.name %></p>
+  </div>
+  </blockquote>  
+    
+    <% if user_signed_in? %>
+    <%= link_to 'Edit', edit_article_path(article) %>
+    <%= link_to 'Destroy', article_path(article),
+      method: :delete, data: { confirm: 'Уверены?' } %>
+    <%end%>  
+  <hr>
+<% end %>
+

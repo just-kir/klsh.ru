@@ -1,4 +1,11 @@
-<h1>Editing</h1>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-lg-offset-1 col-md-9">
+<h1>Редактирование высказывания</h1>
 
 <%= form_for :quote, url: quote_path(@quote), method: :patch do |f| %>
   <% if @quote.errors.any? %>
@@ -14,16 +21,19 @@
   <% end %>
 
   <p>
-    <%= f.label :autor %><br>
-    <%= f.text_field :author %>
+    <%= f.label :author, "Автор высказывания" %><br>
+    <%= f.text_field :author, :class => "form-control" %>
   </p>
  
   <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    <%= f.label :text, "Высказывание" %><br>
+    <%= f.text_area :text, :class => "form-control" %>
   </p>
  
   <p>
-    <%= f.submit %>
+    <%= f.submit "Сохранить изменения", :class => 'btn btn-success btn-green' %>
   </p>
 <% end %>
+</div>
+</div>
+</div>

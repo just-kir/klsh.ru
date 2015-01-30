@@ -1,7 +1,9 @@
 class QuotesController < ApplicationController
 
+before_filter :authenticate_user!, :except => [:index]
+
 def index
-  @quotes = Quote.all
+  @quotes = Quote.order("created_at desc")
 end
 
 def new
@@ -34,7 +36,7 @@ def update
   @quote = Quote.find(params[:id])
  
   if @quote.update(quote_params)
-    redirect_to @quote
+    redirect_to quotes_path
   else
     render 'edit'
   end

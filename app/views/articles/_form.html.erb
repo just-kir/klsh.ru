@@ -1,0 +1,24 @@
+<div id = "form">
+<%= form_for :article, url: articles_path, remote: true do |f| %>
+   
+  <p>
+    <%= f.label :name, "Укажите название издания" %><br>
+    <%= f.text_field :name, :class => "form-control" %>
+  </p>
+ 
+  <p>
+    <%= f.label :link, "Дайте ссылку" %><br>
+    <%= f.text_field :link, :class => "form-control"%>
+  </p>
+ 
+
+  <p>
+    <%= f.label :quote, "Процитируйте издание" %><br>
+    <%= f.text_area :quote, :class => "form-control" %>
+  </p>
+ 
+  <p>
+    <%= f.submit "Сохранить", :class => 'btn btn-success btn-green' %>
+  </p>
+<% end %>
+</div>
