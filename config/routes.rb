@@ -8,8 +8,15 @@ KlshRu::Application.routes.draw do
   resources :posts
   resources :quotes, :path => "they_talk_about_us/quotes"
   resources :articles, :path => "they_talk_about_us/media"
-  resources :elephants, :path => "base/elephants"
-  resources :docs, :path => "base/docs"
+  
+  resources :elephants, :path => "base/elephants" do
+    resources :comment2s
+  end  
+  
+  resources :docs, :path => "base/docs" do
+    resources :comment4s
+  end
+
   resources :reports, :path => "base/reports" do
     resources :comments
   end

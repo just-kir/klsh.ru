@@ -1,40 +1,32 @@
-<p>
-  <strong>Name:</strong>
-  <%= @elephant.name %>
-</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+    <h3 class="panel-title"><a href= <%= url(@elephant.link) %> style="color: #428bca">
+      <u><%= @elephant.title %></u> </a>
+      <%if @elephant.ntn == true%> 
+      <u style ="text-decoration: none"><span class="label label-primary">НТН</span></u>
+      <%end%>
+      <%if @elephant.nen == true%> 
+      <u style ="text-decoration: none"><span class="label label-success">НЕН</span></u>
+      <%end%>
+      <%if @elephant.non == true%> 
+      <u style ="text-decoration: none"><span class="label label-warning">НОН</span></u>
+      <%end%>
+      <%if @elephant.nfn == true%> 
+      <u style ="text-decoration: none"><span class="label label-info">НФН</span></u>
+      <%end%>
+      </h3>
+
+    </div>
+    <div class="panel-body">
+      <p><%= markdown(@elephant.description) %></p>
+      <hr>
+      <p align="right">
+        <b><%= @elephant.name %></b>
+
+<%= link_to 'Back', elephants_path %>
+<h2>Comments</h2>
+<%= render @elephant.comment2s %>
  
-<p>
-  <strong>link:</strong>
-  <%= @elephant.link %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @elephant.title %>
-</p>
-
-<p>
-  <strong>ntn:</strong>
-  <%= @elephant.ntn %>
-</p>
-
-<p>
-  <strong>ntn:</strong>
-  <%= @elephant.nen %>
-</p>
-<p>
-  <strong>ntn:</strong>
-  <%= @elephant.non %>
-</p>
-<p>
-  <strong>ntn:</strong>
-  <%= @elephant.nfn %>
-</p>
-
-
-<p>
-  <strong>Description:</strong>
-  <%= @elephant.description %>
-</p>
-
+<h2>Add a comment:</h2>
+<%= render "comment2s/form" %>
 <%= link_to 'Back', elephants_path %>
