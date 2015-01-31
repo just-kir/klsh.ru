@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <%= link_to "КЛШ", root_path, :class => "navbar-brand"%>
+                <%= link_to "КЛШ", root_path, :class => "navbar-brand", method: :get%>
                 
             </div>
 
@@ -19,19 +19,19 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li class=<%=buthead ("posts") %>> <%= link_to "Новости", 
-                      posts_path%> 
+                      posts_path, method: :get%> 
                     </li>
                     <li class=<%=buthead ("photo") %>> <%=link_to "Фотогалерея",
-                      photo_path %> 
+                      photo_path, method: :get %> 
                     </li>
                     <li class=<%=buthead ("about") %>>
                         <%=link_to "О школе",
-                      about_path %>
+                      about_path, method: :get %>
                     </li>
                       
                     <li class=<%=buthead("toklsh") %>>
                         <%=link_to "КЛШ-2015",
-                      toklsh_path %>
+                      toklsh_path, method: :get %>
                     </li>
                     
 
@@ -41,9 +41,9 @@
                       </a>
                       <ul class="dropdown-menu" role="menu">
                         <li> <%= link_to "Учебные", 
-                                everything_educational_path %> </li>
+                                everything_educational_path, method: :get %> </li>
                         <li> <%= link_to "Фольклор", 
-                                everything_folklore_path %> </li>
+                                everything_folklore_path, method: :get %> </li>
                         <li class="divider"></li>
                         <li> <a href ="#">История КЛШ </a></li>
                         <li class="divider"></li>
@@ -55,11 +55,11 @@
 
                     <li class=<%=buthead ("they_talk_about_us") %>>
                         <%=link_to "О нас говорят",
-                      quotes_path %>
+                      quotes_path, method: :get %>
                     </li>
                     
                     <li class=<%=buthead ("contacts") %>> <%= link_to "Контакты", 
-                        contacts_path%> 
+                        contacts_path, method: :get%> 
                     </li>
                 </ul>
             </div>
