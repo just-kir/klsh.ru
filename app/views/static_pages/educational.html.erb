@@ -1,5 +1,160 @@
-<br>
-<br>
-<br>
 
-Hey, hey!
+
+
+
+    <header class="intro-header" style="background-image: url('<%= asset_path("home-bg.jpg")%>')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1><%= days_left_to_klsh%> <%= get_numending(days_left_to_klsh)%></h1>
+                        <hr class="small">
+                        <span class="subheading">осталось до начала нового сезона</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+<div class="bs-example bs-example-tabs">
+    <ul id="myTab" class="nav nav-tabs">
+      <li class="dropdown active">
+          <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">НТН<b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+            <li class=""><a href="#t2013" tabindex="-1" data-toggle="tab">2013</a></li>
+            <li class=""><a href="#t2012" tabindex="-1" data-toggle="tab">2012</a></li>
+            <li class=""><a href="#t2011" tabindex="-1" data-toggle="tab">2011</a></li>
+            <li class=""><a href="#t2010" tabindex="-1" data-toggle="tab">2010</a></li>
+          </ul>
+        </li>
+      <li class="dropdown active">
+          <a href="#" id="myTabDrop2" class="dropdown-toggle" data-toggle="dropdown">НЕН <b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop2">
+            <li class=""><a href="#e2013" tabindex="-1" data-toggle="tab">2013</a></li>
+            <li class=""><a href="#e2012" tabindex="-1" data-toggle="tab">2012</a></li>
+            <li class=""><a href="#e2011" tabindex="-1" data-toggle="tab">2011</a></li>
+            <li class=""><a href="#e2010" tabindex="-1" data-toggle="tab">2010</a></li>
+          </ul>
+        </li>
+        <li class="dropdown active">
+          <a href="#" id="myTabDrop3" class="dropdown-toggle" data-toggle="dropdown">НОН<b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop3">
+            <li class=""><a href="#ob2013" tabindex="-1" data-toggle="tab">2013</a></li>
+            <li class=""><a href="#ob2012" tabindex="-1" data-toggle="tab">2012</a></li>
+            <li class=""><a href="#ob2011" tabindex="-1" data-toggle="tab">2011</a></li>
+            <li class=""><a href="#ob2010" tabindex="-1" data-toggle="tab">2010</a></li>
+          </ul>
+        </li>
+        <li class="dropdown active">
+          <a href="#" id="myTabDrop4" class="dropdown-toggle" data-toggle="dropdown">НФН <b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop4">
+            <li class=""><a href="#f2013" tabindex="-1" data-toggle="tab">2013</a></li>
+            <li class=""><a href="#f2012" tabindex="-1" data-toggle="tab">2012</a></li>
+            <li class=""><a href="#f2011" tabindex="-1" data-toggle="tab">2011</a></li>
+            <li class=""><a href="#f2010" tabindex="-1" data-toggle="tab">2010</a></li>
+          </ul>
+        </li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade" id="t2013">
+        <div class="list-group">
+          <a href="https://drive.google.com/folderview?id=0B86noxSp3QsXMXlFNUF5NTNVRFU&usp=sharing_eil&tid=0B86noxSp3QsXZDZuUEZKVi0zX28" class="list-group-item">
+          <h4 class="list-group-item-heading">Антон Шейкин</h4>
+          <p class="list-group-item-text">Гиперкомплексные числа</p>
+           </a>
+          <a href="https://drive.google.com/folderview?id=0B86noxSp3QsXZmlHUlVraXNzOGs&usp=sharing_eil&tid=0B86noxSp3QsXZDZuUEZKVi0zX28" class="list-group-item">
+          <h4 class="list-group-item-heading">Борис Демешев</h4>
+          <p class="list-group-item-text">Теория вероятностей</p>
+           </a>
+          <a href="https://drive.google.com/folderview?id=0B86noxSp3QsXcXRsc2tlYnJVSm8&usp=sharing_eil&tid=0B86noxSp3QsXZDZuUEZKVi0zX28" class="list-group-item">
+          <h4 class="list-group-item-heading">Иван Адо</h4>
+          <p class="list-group-item-text">НПЛ на день НТН</p>
+           </a>
+           <a href="https://drive.google.com/folderview?id=0B86noxSp3QsXeGh4X1VoTzdMazA&usp=sharing_eil&tid=0B86noxSp3QsXZDZuUEZKVi0zX28" class="list-group-item">
+          <h4 class="list-group-item-heading">Иван Адо</h4>
+          <p class="list-group-item-text">Теорема Гёделя о неполноте</p>
+           </a>
+           <a href="https://drive.google.com/folderview?id=0B86noxSp3QsXX01hbC1uMTRjNWM&usp=sharing_eil&tid=0B86noxSp3QsXZDZuUEZKVi0zX28" class="list-group-item">
+          <h4 class="list-group-item-heading">Иван Карлов</h4>
+          <p class="list-group-item-text">Фрактальная геометрия</p>
+           </a>
+           <a href="https://drive.google.com/folderview?id=0B86noxSp3QsXeVU3WlE3Mmlncms&usp=sharing_eil&tid=0B86noxSp3QsXZDZuUEZKVi0zX28" class="list-group-item">
+          <h4 class="list-group-item-heading">Ильдар Хисамбеев</h4>
+          <p class="list-group-item-text">Теория множеств</p>
+           </a>
+           <a href="https://drive.google.com/folderview?id=0B86noxSp3QsXdjNYdl96SFZOMlE&usp=sharing_eil&tid=0B86noxSp3QsXZDZuUEZKVi0zX28" class="list-group-item">
+          <h4 class="list-group-item-heading">Кирилл Павленко</h4>
+          <p class="list-group-item-text">курс "Проектирование и анализ алгоритмов"</p>
+          <p class="list-group-item-text">факультатив "Небесная механика"</p>
+           </a>
+            <a href="https://drive.google.com/folderview?id=0B86noxSp3QsXdnYxUVpHSUkyTzQ&usp=sharing_eil&tid=0B86noxSp3QsXZDZuUEZKVi0zX28" class="list-group-item">
+          <h4 class="list-group-item-heading">Никита Астраханцев</h4>
+          <p class="list-group-item-text">Ряды и элементы анализа</p>
+           </a>
+           <a href="https://drive.google.com/folderview?id=0B86noxSp3QsXSlNFRjlmSVZTSzA&usp=sharing_eil&tid=0B86noxSp3QsXZDZuUEZKVi0zX28" class="list-group-item">
+          <h4 class="list-group-item-heading">Саша Абанов</h4>
+          <p class="list-group-item-text">курс "Размерности и оценки"</p>
+          <p class="list-group-item-text">лекция "Math of shoe laces"</p>
+           </a>
+            </a>
+            <a href="https://drive.google.com/folderview?id=0B86noxSp3QsXVTJSMElRN3BSQUk&usp=sharing_eil&tid=0B86noxSp3QsXZDZuUEZKVi0zX28" class="list-group-item">
+          <h4 class="list-group-item-heading">Сергей Ламзин</h4>
+          <p class="list-group-item-text">Аналитическая геометрия и линейная алгебра</p>
+           </a>
+            <a href="https://drive.google.com/folderview?id=0B86noxSp3QsXek9YbThQb0U0Z3c&usp=sharing_eil&tid=0B86noxSp3QsXZDZuUEZKVi0zX28" class="list-group-item">
+          <h4 class="list-group-item-heading">Сергей Малясов</h4>
+          <p class="list-group-item-text">Python для физиков</p>
+           </a>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="t2012">
+      </div>
+      <div class="tab-pane fade" id="t2011">
+      </div>
+      <div class="tab-pane fade" id="t2010">
+      </div>
+      <div class="tab-pane fade" id="e2013">
+      </div>
+      <div class="tab-pane fade" id="e2012">
+      </div>
+      <div class="tab-pane fade" id="e2011">
+      </div>
+      <div class="tab-pane fade" id="e2010">
+      </div>
+      <div class="tab-pane fade" id="ob2013">
+      </div>
+      <div class="tab-pane fade" id="ob2012">
+      </div>
+      <div class="tab-pane fade" id="ob2011">
+      </div>
+      <div class="tab-pane fade" id="ob2010">
+      </div>
+      <div class="tab-pane fade" id="f2013">
+      </div>
+      <div class="tab-pane fade" id="f2012">
+      </div>
+      <div class="tab-pane fade" id="f2011">
+      </div>
+      <div class="tab-pane fade" id="f2010">
+      </div>
+    </div>
+  </div>
+
+
+
+
+<style type="text/css">
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
+
+</style>
+
