@@ -1,6 +1,54 @@
-<!--<body data-spy="scroll" data-target="#affix-nav"> -->
 
 
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#affix-nav").affix({
+        offset: { 
+            top: 300 
+        }
+    });
+    $("#affix-nav").on('affixed.bs.affix', function(){
+        alert("The left navigation menu has been affixed. Now it doesn't scroll with the page.");
+    });
+});
+</script>
+<style type="text/css">
+ul.sidenav{
+        width: 140px;
+        margin-top: 20px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    }
+    ul.sidenav li{
+        margin: 0;
+        border-top: 1px solid #ddd;
+    }
+    ul.sidenav li:first-child{
+        border-top: none;
+    }
+    ul.sidenav li a{
+        margin: 0;
+        padding: 8px 16px;
+        border-radius: 0;
+    }
+    ul.sidenav li.active a, ul.nav-tabs li.active a:hover{
+        color: #fff;
+        background: #0088cc;
+        border: 1px solid #0088cc;
+    }
+    ul.sidenav li:first-child a{
+        border-radius: 4px 4px 0 0;
+    }
+    ul.sidenav li:last-child a{
+        border-radius: 0 0 4px 4px;
+    }
+
+ul.sidenav.affix{
+        top: 30px; /* Set the top position of pinned element */
+    }
+
+</style>
 <header class="intro-header" style="background-image: url('<%= asset_path("home-bg.jpg")%>')">
         <div class="container">
             <div class="row">
@@ -19,7 +67,7 @@
 
 <div class="row">
 <nav id="affix-nav" class="sidebar col-md-3 hidden-sm hidden-xs">
-    <ul class="nav sidenav" data-spy="affix" data-offset-top="0" data-offset-bottom="0">
+    <ul class="nav sidenav">
         <li class="active"><a href="#wt_is_klsh">Что такое КЛШ</a>
         <ul class="nav">
         <li><a href="#concept">Концепция</a></li>
