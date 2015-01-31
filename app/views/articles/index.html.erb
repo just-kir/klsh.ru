@@ -16,12 +16,12 @@
 <div class="row">
 
 <ul class="nav nav-tabs">
-  <li role="presentation"> <%= link_to "Люди", quotes_path%></li>
+  <li role="presentation"> <%= link_to "Люди", quotes_path, method: :get%></li>
   <li role="presentation" class="active"><a href="">СМИ</a></li>
 </ul>
 <br>
 <% if user_signed_in? %>
-<%= link_to 'New Quote', new_article_path, id: "new_link", remote: true, :class => 'btn btn-success btn-green' %> 
+<%= link_to 'Добавить', new_article_path, id: "new_link", remote: true, :class => 'btn btn-success btn-green' %> 
 <%end%>
 <div class="articles" id="articles">
 
