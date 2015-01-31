@@ -4,4 +4,9 @@
     <p> <%= markdown(@report.text) %></p>
 </div>
 
+<h2>Comments</h2>
+<%= render @report.comments %>
+ 
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
 <%= link_to 'Back', reports_path %>

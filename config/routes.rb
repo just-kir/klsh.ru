@@ -10,7 +10,10 @@ KlshRu::Application.routes.draw do
   resources :articles, :path => "they_talk_about_us/media"
   resources :elephants, :path => "base/elephants"
   resources :docs, :path => "base/docs"
-  resources :reports, :path => "base/reports"
+  resources :reports, :path => "base/reports" do
+    resources :comments
+  end
+
 
   root  'posts#home'
   
