@@ -1,21 +1,22 @@
-<p>
-  <strong>Name:</strong>
-  <%= @doc.name %>
-</p>
- 
-<p>
-  <strong>link:</strong>
-  <%= @doc.link %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @doc.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @doc.description %>
-</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title"><a href= <%= url(@doc.link) %> style="color: #428bca">
+      <u><%= @doc.title %></u></a></h3>
+    </div>
+    <div class="panel-body">
+      <p><%= markdown(@doc.description) %></p>
+      <hr>
+      <p align="right">
+        <b><%= @doc.name %></b>
+      </p>
+    </div>
+  </div>
 
 <%= link_to 'Back', docs_path %>
+
+
+<h2>Комментарии</h2>
+<%= render @doc.comment4s %>
+ 
+<h2>Добавить комментарий:</h2>
+<%= render "comment4s/form" %>

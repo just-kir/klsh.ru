@@ -1,2 +1,4 @@
 class Report < ActiveRecord::Base
-end
+	has_many :comments, dependent: :destroy
+end	
+

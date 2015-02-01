@@ -5,7 +5,9 @@
     <h4><%= report.name %> </h4>
     <p> <%= markdown(report.text) %></p>
   </div>
-  <%= link_to 'Show', report_path(report) %>
+  
+  <% s = "Комментарии (" + (report.comments.count).to_s + ")" %>
+  <%= link_to s, report_path(report) %>
   <%= link_to 'Edit', edit_report_path(report) %>
   <%= link_to 'Destroy', report_path(report),
       method: :delete, data: { confirm: 'Are you sure?' } %>
