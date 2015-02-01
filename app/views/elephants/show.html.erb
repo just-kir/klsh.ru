@@ -22,11 +22,15 @@
       <hr>
       <p align="right">
         <b><%= @elephant.name %></b>
+      </p>
+</div>
+</div>
 
 <%= link_to 'Back', elephants_path %>
-<h2>Comments</h2>
+<hr>
+<h2>Комментарии</h2>
 <%= render @elephant.comment2s %>
  
-<h2>Add a comment:</h2>
+<h2>Добавить комментарий:</h2>
 <%= render "comment2s/form" %>
 <%= link_to 'Back', elephants_path %>

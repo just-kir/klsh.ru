@@ -1,14 +1,10 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment4.commenter %>
-</p>
- 
-<p>
-  <strong>Comment:</strong>
-  <%= comment4.body %>
-</p>
-<p>
-  <%= link_to 'Destroy Comment', [comment4.doc, comment4],
+
+<div class = "bs-callout bs-callout-info">
+    <h4><%= comment4.commenter%> </h4>
+    <p> <%= markdown(comment4.body) %></p>
+    <p align="right">
+  			<%= link_to 'Удалить комментарий', [comment4.doc, comment4],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
-</p>
+	</p>
+</div>
