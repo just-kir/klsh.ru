@@ -29,6 +29,25 @@ module ApplicationHelper
 		return ending	
 	end
 
+  def get_stayed(num)
+    num = num % 100
+    if (num >= 11) and (num <=19)
+      ending = 'осталось'
+    else
+      i = num % 10
+      case i
+      when 1
+        ending = 'остался'
+      when 2..4
+        ending = 'осталось'  
+      else
+        ending = 'осталось'
+      end 
+    end
+    return ending 
+  end
+
+
 	def days_left_to_klsh
 		date_of_klsh = Date.new(2015, 07, 13)
 		days = (date_of_klsh - Date.today).to_i
