@@ -19,7 +19,17 @@
     <%= javascript_include_tag 'application.js' %>
     <%= csrf_meta_tags %>
     <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'] ],
+       processEscapes: true
+     }
+    });
+    </script>
+    <%= mathjax_tag %>
     <%= render 'layouts/shim' %>
+
   </head>
   
     <%= render 'layouts/header' %>
