@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131225136) do
+ActiveRecord::Schema.define(version: 20150216165506) do
 
   create_table "articles", force: true do |t|
     t.string   "name"
@@ -98,6 +98,21 @@ ActiveRecord::Schema.define(version: 20150131225136) do
     t.boolean  "non"
     t.boolean  "nen"
     t.boolean  "nfn"
+  end
+
+  create_table "materials", force: true do |t|
+    t.string   "author"
+    t.string   "position"
+    t.string   "title"
+    t.text     "annotation"
+    t.boolean  "ntn"
+    t.boolean  "nen"
+    t.boolean  "nfn"
+    t.boolean  "non"
+    t.integer  "year"
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "media", force: true do |t|

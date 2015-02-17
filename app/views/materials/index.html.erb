@@ -1,0 +1,205 @@
+<style type="text/css">
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
+
+</style>
+
+
+<header class="intro-header" style="background-image: url('<%= asset_path("Untitled.jpg")%>')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1><%= days_left_to_klsh%> <%= get_numending(days_left_to_klsh)%></h1>
+                        <hr class="small">
+                        <span class="subheading"><%= get_stayed(days_left_to_klsh)%> до начала нового сезона</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+ 
+
+<div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<% if user_signed_in? %>
+  <%= link_to 'Добавить материал', new_material_path, :class => 'btn btn-success btn-green' %>
+<% end %>  
+<br>
+<br>
+
+</div>
+</div>
+</div>
+<%ntn_years = Array.new(2050-1975)%>
+<%@materials.where(:ntn => true).find_each do |material| %>
+  <%ntn_years[material.year - 1975] = true%>
+<%end%>
+
+<%nen_years = Array.new(2050-1975)%>
+<%@materials.where(:nen => true).find_each do |material| %>
+  <%nen_years[material.year - 1975] = true%>
+<%end%>
+
+<%nfn_years = Array.new(2050-1975)%>
+<%@materials.where(:nfn => true).find_each do |material| %>
+  <%nfn_years[material.year - 1975] = true%>
+<%end%>
+
+<%non_years = Array.new(2050-1975)%>
+<%@materials.where(:non => true).find_each do |material| %>
+  <%non_years[material.year - 1975] = true%>
+<%end%>
+
+<div class="bs-example bs-example-tabs">
+  <ul id="myTab" class="nav nav-tabs">
+    <li class="dropdown active">
+      <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown">НТН<b class="caret"></b></a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+        <% for i in (0..ntn_years.length-1).reverse_each %>
+          <%if ntn_years[i] == true%>
+            <%s = "#t" + (1975+i).to_s%>
+            <li class=""><a href=<%=s%> tabindex="-1" data-toggle="tab"><%=1975+i%></a></li>
+          <%end%>
+        <%end%>
+      </ul>
+    </li> 
+    <li class="dropdown active">
+          <a href="#" id="myTabDrop2" class="dropdown-toggle" data-toggle="dropdown">НЕН <b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop2">
+            <% for i in (0..nen_years.length-1).reverse_each %>
+              <%if nen_years[i] == true%>
+                <%s = "#e" + (1975+i).to_s%>
+                <li class=""><a href=<%=s%> tabindex="-1" data-toggle="tab"><%=1975+i%></a></li>
+              <%end%>
+            <%end%>
+          </ul>
+        </li>
+        <li class="dropdown active">
+          <a href="#" id="myTabDrop3" class="dropdown-toggle" data-toggle="dropdown">НОН<b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop3">
+          <% for i in (0..non_years.length-1).reverse_each %>
+            <%if non_years[i] == true%>
+              <%s = "#ob" + (1975+i).to_s%>
+              <li class=""><a href=<%=s%> tabindex="-1" data-toggle="tab"><%=1975+i%></a></li>
+            <%end%>
+          <%end%>
+          </ul>
+        </li>
+        <li class="dropdown active">
+          <a href="#" id="myTabDrop4" class="dropdown-toggle" data-toggle="dropdown">НФН <b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop4">
+          <% for i in (0..nfn_years.length-1).reverse_each %>
+            <%if nfn_years[i] == true%>
+              <%s = "#f" + (1975+i).to_s%>
+              <li class=""><a href=<%=s%> tabindex="-1" data-toggle="tab"><%=1975+i%></a></li>
+            <%end%>
+          <%end%>
+          </ul>
+        </li>
+    </ul>  
+    <div id="myTabContent" class="tab-content">
+      <% for i in (0..ntn_years.length-1) %>
+        <%if ntn_years[i] == true %>
+          <%s = "t" + (1975+i).to_s%>
+          <div class="tab-pane fade" id="<%= s%>" >
+            <div class="list-group">
+            <% @materials.where("ntn = ? AND year = ?", true, 1975+i).each do |material| %> 
+              <div class="list-group-item">
+              <h4 class="list-group-item-heading"><a href = "<%= url(material.link) %>" class = "linkss"> <%=material.title%></a></h4>
+              <p class="list-group-item-text"><i><b><%=material.author%></b></i> &mdash; <%= material.position%></p>
+              <p class="list-group-item-text"><%=material.annotation%></p>
+              <% if user_signed_in? %>
+              <%= link_to 'Редактировать', edit_material_path(material), class: "linkss" %>
+              <%= link_to 'Удалить', material_path(material), 
+                    method: :delete, data: { confirm: 'Вы уверены?' }, class: "linkss" %>
+              <% end%>      
+              </div>
+
+            <%end %>
+            </div> 
+          </div>
+        <%end%>  
+      <% end %>
+
+
+      <% for i in (0..nen_years.length-1) %>
+        <%if nen_years[i] == true %>
+          <%s = "e" + (1975+i).to_s%>
+          <div class="tab-pane fade" id="<%= s%>" >
+            <div class="list-group">
+            <% @materials.where("nen = ? AND year = ?", true, 1975+i).each do |material| %> 
+              <div class="list-group-item">
+              <h4 class="list-group-item-heading"><a href = "<%= url(material.link) %>" class = "linkss"> <%=material.title%></a></h4>
+              <p class="list-group-item-text"><i><b><%=material.author%></b></i> &mdash; <%= material.position%></p>
+              <p class="list-group-item-text"><%=material.annotation%></p>
+              <% if user_signed_in? %>
+              <%= link_to 'Редактировать', edit_material_path(material), class: "linkss" %>
+              <%= link_to 'Удалить', material_path(material), 
+                    method: :delete, data: { confirm: 'Вы уверены?' }, class: "linkss" %>
+              <%end%>
+              </div>
+
+            <%end %>
+            </div> 
+          </div>
+        <%end%>  
+      <% end %>
+
+      <% for i in (0..non_years.length-1) %>
+        <%if non_years[i] == true %>
+          <%s = "ob" + (1975+i).to_s%>
+          <div class="tab-pane fade" id="<%= s%>" >
+            <div class="list-group">
+            <% @materials.where("non = ? AND year = ?", true, 1975+i).each do |material| %> 
+              <div class="list-group-item">
+              <h4 class="list-group-item-heading"><a href = "<%= url(material.link) %>" class = "linkss"> <%=material.title%></a></h4>
+              <p class="list-group-item-text"><i><b><%=material.author%></b></i> &mdash; <%= material.position%></p>
+              <p class="list-group-item-text"><%=material.annotation%></p>
+              <% if user_signed_in? %>
+              <%= link_to 'Редактировать', edit_material_path(material), class: "linkss" %>
+              <%= link_to 'Удалить', material_path(material), 
+                    method: :delete, data: { confirm: 'Вы уверены?' }, class: "linkss" %>
+              <%end%>      
+              </div>
+
+            <%end %>
+            </div> 
+          </div>
+        <%end%>  
+      <% end %>
+
+
+      <% for i in (0..nfn_years.length-1) %>
+        <%if nfn_years[i] == true %>
+          <%s = "f" + (1975+i).to_s%>
+          <div class="tab-pane fade" id="<%= s%>" >
+            <div class="list-group">
+            <% @materials.where("nfn = ? AND year = ?", true, 1975+i).each do |material| %> 
+              <div class="list-group-item">
+              <h4 class="list-group-item-heading"><a href = "<%= url(material.link) %>" class = "linkss"> <%=material.title%></a></h4>
+              <p class="list-group-item-text"><i><b><%=material.author%></b></i> &mdash; <%= material.position%></p>
+              <p class="list-group-item-text"><%=material.annotation%></p>
+              <% if user_signed_in? %>
+              <%= link_to 'Редактировать', edit_material_path(material), class: "linkss" %>
+              <%= link_to 'Удалить', material_path(material), 
+                    method: :delete, data: { confirm: 'Вы уверены?' }, class: "linkss" %>
+              <%end%>      
+              </div>
+
+            <%end %>
+            </div> 
+          </div>
+        <%end%>  
+      <% end %>
+    </div>
+</div>

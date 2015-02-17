@@ -8,7 +8,8 @@ KlshRu::Application.routes.draw do
   resources :posts
   resources :quotes, :path => "they_talk_about_us/quotes"
   resources :articles, :path => "they_talk_about_us/media"
-  
+  resources :materials, :path => "everything/educational"
+
   resources :elephants, :path => "base/elephants" do
     resources :comment2s
   end  
@@ -39,7 +40,7 @@ KlshRu::Application.routes.draw do
   match 'everything/studying', to: 'static_pages#studying', via: 'get'
   match 'everything/history', to: 'static_pages#history', via: 'get'
   match 'everything/people', to: 'static_pages#people', via: 'get'
-  match 'everything/educational', to: 'static_pages#educational', via: 'get'
+  #match 'everything/educational', to: 'static_pages#educational', via: 'get'
 
   match '/base', to: 'base#index', via: 'get'
   match '/base/rules', to: 'base#rules', via: 'get'
