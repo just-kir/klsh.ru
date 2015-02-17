@@ -13,6 +13,7 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'fotoramajs'
 gem 'devise', '3.2.4'
 gem 'redcarpet', '~> 3.1.2'
+gem 'mathjax-rails'
 
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 3.8.0'

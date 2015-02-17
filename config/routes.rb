@@ -4,7 +4,7 @@ KlshRu::Application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
-
+  
   resources :posts
   resources :quotes, :path => "they_talk_about_us/quotes"
   resources :articles, :path => "they_talk_about_us/media"
@@ -24,7 +24,7 @@ KlshRu::Application.routes.draw do
 
   root  'posts#home'
   
-
+  
 
   #match '/signup',  to: 'users#new',            via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
@@ -102,4 +102,5 @@ KlshRu::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  mathjax 'mathjax'
 end
