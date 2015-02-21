@@ -49,7 +49,8 @@ end
 
 private
   def elephant_params
-    params.require(:elephant).permit(:name, :link, :title, :ntn, :nen, :non, :nfn, :description)
+    params.require(:elephant).permit(:name, :link, :title, :ntn, :nen, :non, :nfn,
+     :description, :big, :medium, :small, :author, :price)
   end
 
 
