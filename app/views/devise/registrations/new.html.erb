@@ -6,7 +6,7 @@
 <div class="row">
 <div class="col-lg-6 col-lg-offset-1 col-md-7">
 <h2>Регистрация</h2>
-
+<br>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -17,7 +17,7 @@
     <%= f.password_field :password, autocomplete: "off", :class => "form-control" %></div>
 
   <div><%= f.label :password_confirmation, "Еще раз пароль" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %></div>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control"  %></div>
   <br>
   <div><%= f.submit "Зарегистрироваться", :class => 'btn btn-success btn-green' %></div>
 <% end %>	

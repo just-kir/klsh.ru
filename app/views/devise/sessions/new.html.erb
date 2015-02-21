@@ -6,16 +6,15 @@
 <div class="row">
 <div class="col-lg-6 col-lg-offset-1 col-md-7">
 <h2>Вход</h2>
-
+<br>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
+  <div><%= f.label :email, "Ваш e-mail" %><br />
   <%= f.email_field :email, autofocus: true, :class => "form-control" %></div>
 
-  <div><%= f.label :password %><br />
+  <div><%= f.label :password, "Пароль" %><br />
     <%= f.password_field :password, autocomplete: "off", :class => "form-control" %></div>
-
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me, "Запомнить меня" %></div>
   <% end -%>
 <br>
   <div><%= f.submit "Войти", :class => 'btn btn-success btn-green' %></div>
