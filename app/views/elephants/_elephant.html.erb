@@ -2,8 +2,32 @@
   <br>
   <div class="panel panel-default">
     <div class="panel-heading">
-    <h3 class="panel-title"><a href= <%= url(elephant.link) %> style="color: #428bca">
+    <h3 class="panel-title">
+      <%= elephant.author %>,
+      <a href= <%= url(elephant.link) %> style="color: #428bca">
       <u><%= elephant.title %></u> </a>
+      
+      </h3>
+
+    </div>
+    <div class="panel-body">
+      <p><%= markdown(elephant.description) %></p> <br>
+      Цена: 
+      <span style="color: #b12704;"> <b><%= elephant.price %> руб.</b></span>
+      <hr>
+      <div class="col-md-6">
+
+      <%if elephant.big == true%> 
+      <u style ="text-decoration: none"><span class="label label-danger">Большой</span></u>
+      <%end%>
+      <%if elephant.medium == true%> 
+      <u style ="text-decoration: none"><span class="label label-success">Средний</span></u>
+      <%end%>
+      <%if elephant.small == true%> 
+      <u style ="text-decoration: none"><span class="label label-default">Малый</span></u>
+      <%end%>
+      
+      <br>
       <%if elephant.ntn == true%> 
       <u style ="text-decoration: none"><span class="label label-primary">НТН</span></u>
       <%end%>
@@ -16,12 +40,9 @@
       <%if elephant.nfn == true%> 
       <u style ="text-decoration: none"><span class="label label-info">НФН</span></u>
       <%end%>
-      </h3>
-
-    </div>
-    <div class="panel-body">
-      <p><%= markdown(elephant.description) %></p>
-      <hr>
+      </div>
+      <div class="col-md-6">
+      <br>
       <p align="right">
         <b><%= elephant.name %></b>
         <% s = "Комментарии (" + (elephant.comment2s.count).to_s + ")" %>
@@ -30,6 +51,7 @@
         <%= link_to 'Destroy', elephant_path(elephant),
         method: :delete, data: { confirm: 'Уверены?' } %>
       </p>
+      </div>
     </div>
   </div>
   <hr>  

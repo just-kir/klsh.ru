@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216165506) do
+ActiveRecord::Schema.define(version: 20150221183103) do
 
   create_table "articles", force: true do |t|
     t.string   "name"
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(version: 20150216165506) do
   end
 
   add_index "comment2s", ["elephant_id"], name: "index_comment2s_on_elephant_id"
+
+  create_table "comment3s", force: true do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "docs_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comment3s", ["docs_id"], name: "index_comment3s_on_docs_id"
 
   create_table "comment4s", force: true do |t|
     t.string   "commenter"
@@ -88,6 +98,11 @@ ActiveRecord::Schema.define(version: 20150216165506) do
     t.boolean  "non"
     t.boolean  "nen"
     t.boolean  "nfn"
+    t.float    "price"
+    t.boolean  "big"
+    t.boolean  "medium"
+    t.boolean  "small"
+    t.string   "author"
   end
 
   create_table "materials", force: true do |t|

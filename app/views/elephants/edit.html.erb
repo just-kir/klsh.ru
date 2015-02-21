@@ -40,11 +40,35 @@
     </tr>
   </table>
 
+  <%= f.label "Какой это слон?" %><br>
+  <table class="table table-bordered"  style="width:40%">
+    <tr class="active">
+      <td><%= f.label "Большой" %></td>
+      <td><%= f.label "Средний" %></td>
+      <td><%= f.label "Малый" %></td>
+    </tr>
+    <tr>  
+      <td><%= f.check_box :big %></td>
+      <td><%= f.check_box :medium %></td>
+      <td><%= f.check_box :small %></td> 
+    </tr>
+  </table>
+
+  <p>
+    <%= f.label :author, "Автор книги" %><br>
+    <%= f.text_field :author, :class => "form-control" %>
+  </p>
+
   <p>
     <%= f.label :title, "Название книги" %><br>
     <%= f.text_field :title, :class => "form-control" %>
   </p>
  
+  <p>
+    <%= f.label :price, "Цена книги в рублях (только число)" %><br>
+    <%= f.text_field :price, :class => "form-control" %>
+  </p>
+
 
   <p>
     <%= f.label :description, "Короткое описание" %><br>

@@ -19,10 +19,42 @@
     </div>
     <div class="panel-body">
       <p><%= markdown(@elephant.description) %></p>
+      <br>
+      Цена: 
+      <span style="color: #b12704;"> <b><%= @elephant.price %> руб.</b></span>
       <hr>
+      <div class="col-md-6">
+
+      <%if @elephant.big == true%> 
+      <u style ="text-decoration: none"><span class="label label-danger">Большой</span></u>
+      <%end%>
+      <%if @elephant.medium == true%> 
+      <u style ="text-decoration: none"><span class="label label-success">Средний</span></u>
+      <%end%>
+      <%if @elephant.small == true%> 
+      <u style ="text-decoration: none"><span class="label label-default">Малый</span></u>
+      <%end%>
+      
+      <br>
+      <%if @elephant.ntn == true%> 
+      <u style ="text-decoration: none"><span class="label label-primary">НТН</span></u>
+      <%end%>
+      <%if @elephant.nen == true%> 
+      <u style ="text-decoration: none"><span class="label label-success">НЕН</span></u>
+      <%end%>
+      <%if @elephant.non == true%> 
+      <u style ="text-decoration: none"><span class="label label-warning">НОН</span></u>
+      <%end%>
+      <%if @elephant.nfn == true%> 
+      <u style ="text-decoration: none"><span class="label label-info">НФН</span></u>
+      <%end%>
+      </div>
+      <div class="col-md-6">
+      <br>
       <p align="right">
         <b><%= @elephant.name %></b>
       </p>
+      </div>
 </div>
 </div>
 
