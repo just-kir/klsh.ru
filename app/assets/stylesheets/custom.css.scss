@@ -1,6 +1,9 @@
 /*
+*= require_fonts
 *= require_self
+*= require_fonts
 */
+
 $grid-float-breakpoint: 1020px;
 @import 'fotorama';
 @import "bootstrap-sprockets";
