@@ -34,7 +34,7 @@ KlshRu::Application.routes.draw do
   match '/photo', to: 'static_pages#photo', via: 'get'
   
   match '/toklsh', to: 'static_pages#toklsh', via: 'get'
-  
+  match '/jq', to: 'static_pages#intro_task', via: 'get'  
 
 
   match 'everything/folklore', to: 'static_pages#folklore', via: 'get'

@@ -21,6 +21,7 @@
 
 //= require bootstrap-sprockets
 //= require clean-blog
+//= require jquery-fileupload
 // require_tree .
 
 
