@@ -5,6 +5,7 @@ KlshRu::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   
+  resources :uploads
   resources :posts
   resources :quotes, :path => "they_talk_about_us/quotes"
   resources :articles, :path => "they_talk_about_us/media"

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require jquery-fileupload
 //= require turbolinks
 
 //= require ckeditor/init
@@ -21,7 +22,7 @@
 
 //= require bootstrap-sprockets
 //= require clean-blog
-//= require jquery-fileupload
+
 // require_tree .
 
 
