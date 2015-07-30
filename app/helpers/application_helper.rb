@@ -49,7 +49,7 @@ module ApplicationHelper
 
 
 	def days_left_to_klsh
-		date_of_klsh = Date.new(2015, 07, 13)
+		date_of_klsh = Date.new(2016, 07, 13)
 		days = (date_of_klsh - Date.today).to_i
 		return days
 	end
