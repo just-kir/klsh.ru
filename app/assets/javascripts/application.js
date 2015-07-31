@@ -22,6 +22,7 @@
 
 //= require bootstrap-sprockets
 //= require clean-blog
+//= require bootstrap.file-input
 
 // require_tree .
 

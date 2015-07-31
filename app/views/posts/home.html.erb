@@ -1,5 +1,4 @@
 
-
     
 <% provide(:title, 'Главная') %>
 
@@ -93,6 +92,9 @@
     .thumb2 h3 {
       font-style: normal;
       }  
+    .thumbnail{
+    vertical-align: middle !important;
+      }
   </style>
     <div class="thumbnail">
       <div class="thumb caption">
@@ -110,31 +112,29 @@
       </div>
     </div>
   </div>
-<a href="">
+<%= link_to about_path do %>
    <div class="col-sm-6 col-md-3">
     <div class="thumb2 thumbnail">
       <img src="<%= asset_path("lampa.jpg")%>" alt="...">
       <div class="caption">
         <h3>О школе</h3>
         <p>Концепция и структура Краснояской летней школы</p>
-        
-        
       </div>
     </div>
   </div>
-</a>
-<a href="">
+<%end%>
+<%= link_to toklsh_path do %>
    <div class="col-sm-6 col-md-3">
     <div class="thumb2 thumbnail">
       <img src="<%= asset_path("about_school.jpg")%>" alt="...">
       <div class="caption">
         <h3>КЛШ-2016</h3>
-        <p>Вся информация о поступлении и мероприятиях школы</p>
+        <p>Вся информация о поступлении и мероприятиях школы в этом году</p>
       </div>
     </div>
   </div>
-</a>
-<a href="">
+<%end%>
+<%= link_to faq_path do %>
    <div class="col-sm-6 col-md-3">
     <div class="thumb2 thumbnail">
       <img src="<%= asset_path("FAQ.jpg")%>" alt="...">
@@ -144,11 +144,16 @@
       </div>
     </div>
   </div>
-</a>
+<%end%>
 </div>
 </div>  
 </font>
     <hr>
+
+
+ <script>
+$(".thumbnail").height(Math.max.apply(null, $(".thumbnail").map(function() { return $(this).height(); })));
+ </script>  
 
 
 

@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#">
+                <%= link_to root_path, method: :get do %>
 
                       <img src="<%= asset_path("klsh2.svg")%>"
                         onmouseover="this.src='<%= asset_path("klsh1.svg")%>';"
@@ -18,7 +18,7 @@
                         height=31
                         width=93 style="margin:12px 0px">
                       </img>
-                    </a>
+                <% end %>
                <!-- <%= link_to "КЛШ", root_path, :class => "navbar-brand", method: :get%>-->
                 
             </div>
